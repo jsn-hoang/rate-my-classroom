@@ -10,7 +10,7 @@ const getClassroomList = async () => {
 
 const getClassroom = async (classroomName) => {
   console.log(`${api}/classroom/${classroomName}`)
-  const classrooms = await axios.get(`${api}/classroom/${classroomName}`);
+  const classrooms = await axios.get(`${api}/classroom/${classroomName}/`);
   return classrooms.data;
 };
 
