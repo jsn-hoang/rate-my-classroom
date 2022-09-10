@@ -8,6 +8,7 @@ const Search = () => {
     console.log(data);
   };
   return (
+  <div>
     <form>
       <label htmlFor="header-search">
         <input
@@ -19,7 +20,8 @@ const Search = () => {
       </label>
       <button onClick={handleSubmit}>Search</button>
     </form>
+  </div>
   );
-};
+}
 
 export default Search;
