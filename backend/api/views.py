@@ -4,10 +4,18 @@ from .models import Classroom, Review
 from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 
+
 # Create your views here.
 class ClassroomView(viewsets.ModelViewSet):
     serializer_class = ClassroomSerializer
     queryset = Classroom.objects.all()
+
+    def retrieve(self, request, pk):
+        classrooms = Classroom.objects.filter(name__icontains=pk)
+        if not classrooms:
+            return Response({"response": "Not Found"}, status=status.HTTP_404_NOT_FOUND)
+        serializer = ClassroomSerializer(classrooms, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 class ReviewView(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
@@ -20,3 +28,4 @@ class ReviewView(viewsets.ModelViewSet):
         reviews = Review.objects.filter(classroom=classroom[0])
         serializer = ReviewSerializer(reviews, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
+    

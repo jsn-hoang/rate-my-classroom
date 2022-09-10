@@ -1,9 +1,16 @@
 import axios from 'axios';
+import "regenerator-runtime";
 
-const api = 'localhost:8000/api';
+const api = 'http://localhost:8000/api';
 
 const getClassroomList = async () => {
   const classrooms = await axios.get(`${api}/classroom/`);
+  return classrooms.data;
+};
+
+const getClassroom = async (classroomName) => {
+  console.log(`${api}/classroom/${classroomName}`)
+  const classrooms = await axios.get(`${api}/classroom/${classroomName}`);
   return classrooms.data;
 };
 
@@ -22,5 +29,9 @@ const createReview = async (title, description, rating, classroom) => {
     {
       title, description, rating, classroom,
     });
-  return classroom.data;
+  return review.data;
+};
+
+export {
+  getClassroomList, getReviewList, createClassroom, createReview, getClassroom,
 };

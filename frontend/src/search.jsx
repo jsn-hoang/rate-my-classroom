@@ -1,9 +1,14 @@
 import React from 'react';
-import './search.css';
+import {getClassroom} from './service';
 
-const Search = () => (
-  <div className="search">
-    <form action="/" method="get">
+const Search = () => {
+  const handleSubmit = async () => {
+    const data = await getClassroom('etlc');
+    console.log(data);
+  };
+  return (
+  <div>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="header-search">
         <input
           type="text"
@@ -15,6 +20,7 @@ const Search = () => (
       <button type="submit">Search</button>
     </form>
   </div>
-);
+  );
+}
 
 export default Search;
