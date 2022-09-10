@@ -1,8 +1,9 @@
 import React from 'react';
+import './navbar.css';
 
 const Navbar = () => (
   <div className="navbar">
-    <a href="#top" className="navbar-name">RateMyClassroom</a>
+    <span className="navbar-name">RateMyClassroom</span>
   </div>
 );
 

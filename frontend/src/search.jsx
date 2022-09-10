@@ -7,6 +7,7 @@ const Search = () => {
     console.log(data);
   };
   return (
+  <div>
     <form onSubmit={handleSubmit}>
       <label htmlFor="header-search">
         <input
@@ -18,7 +19,8 @@ const Search = () => {
       </label>
       <button type="submit">Search</button>
     </form>
+  </div>
   );
-};
+}
 
 export default Search;
