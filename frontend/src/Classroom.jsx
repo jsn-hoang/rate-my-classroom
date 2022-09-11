@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom"
+import NewReview from './newReview';
 import { getReviewList } from "./service"
 import './classroom.css'
 
@@ -14,6 +15,7 @@ const Classroom = () => {
     return (
         <div style={{fontFamily: 'Courier New'}}>
             <h1 style={{margin:'20px'}}>{ id }</h1>
+            <NewReview id={id}/>
             {reviewList.map((review) => {
                 console.log(review)
                 return(
