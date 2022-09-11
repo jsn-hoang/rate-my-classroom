@@ -16,8 +16,8 @@ const Classroom = () => {
             {reviewList.map((review) => {
                 console.log(review)
                 return(
-                    <div>
-                        {review}.rating
+                    <div key={review.title}>
+                        {review.rating}
                     </div>
                 )
             })}
