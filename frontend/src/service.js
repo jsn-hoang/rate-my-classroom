@@ -9,9 +9,16 @@ const getClassroomList = async () => {
 };
 
 const getClassroom = async (classroomName) => {
-  console.log(`${api}/classroom/${classroomName}`);
-  const classrooms = await axios.get(`${api}/classroom/${classroomName}/`);
-  return classrooms.data;
+  try{
+    console.log(`${api}/classroom/${classroomName}`);
+    const classrooms = await axios.get(`${api}/classroom/${classroomName}/`);
+    return classrooms.data;
+  }
+  catch(error){
+    if (error.response.status === 404){
+      return 404;
+    }
+  }
 };
 
 const getReviewList = async (classroomName) => {

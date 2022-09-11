@@ -8,8 +8,13 @@ const Search = ({setClassroomList}) => {
   useEffect(async() => {
     if (searchText !== ""){
       const data = await getClassroom(searchText);
-      console.log(data);
-      setClassroomList(data)
+      if (data === 404) {
+        setClassroomList([])
+      }
+      else{
+        console.log(data);
+        setClassroomList(data)
+      }
     } else {
       setClassroomList([])
     }
