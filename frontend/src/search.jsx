@@ -26,7 +26,6 @@ const Search = ({setClassroomList}) => {
     console.log(data);
     setClassroomList(data)
     // document.getElementById('header-search').value = '';
-    setSearchText("")
   };
 
 
