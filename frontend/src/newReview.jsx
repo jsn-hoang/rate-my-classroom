@@ -27,6 +27,9 @@ const NewReview = ({id}) => {
 
     return (
         <div className="newReview">
+            <h2>
+                Add a Review
+            </h2>
             <form onSubmit={handleSubmit} className='reviewForm'>
                 <div>
                     <label>
