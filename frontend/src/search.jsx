@@ -4,8 +4,11 @@ import {getClassroom} from './service';
 const Search = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const data = await getClassroom('111');
+    const data = await getClassroom('etlc e1-007');
     console.log(data);
+    if (data == 'search not found'){
+      console.log('')
+    }
   };
   return (
   <div>

@@ -9,9 +9,18 @@ const getClassroomList = async () => {
 };
 
 const getClassroom = async (classroomName) => {
-  console.log(`${api}/classroom/${classroomName}`)
-  const classrooms = await axios.get(`${api}/classroom/${classroomName}/`);
-  return classrooms.data;
+    try{
+        console.log(`${api}/classroom/${classroomName}`)
+        const classrooms = await axios.get(`${api}/classroom/${classroomName}/`);
+        return classrooms.data;
+    }
+    catch(err){
+        if (err.response.status === 404){
+            return 'search not found';
+        }
+    }
+
+    // implement try-catch for 404 error
 };
 
 const getReviewList = async (classroomName) => {
