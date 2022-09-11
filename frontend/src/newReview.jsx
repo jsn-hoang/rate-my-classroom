@@ -1,5 +1,6 @@
 import React, { useState } from "react"; 
 import { createReview } from './service';
+import './newReview.css';
 
 const NewReview = ({id}) => {
     const [newReviewTitle, setNewReviewTitle] = useState("")
@@ -8,8 +9,9 @@ const NewReview = ({id}) => {
         e.preventDefault()
         const rating = document.getElementById("rating");
         const ratingValue = rating.value;
-        const newReviewawait = createReview(newReviewTitle, newReviewDescription, ratingValue, id); 
-        console.log(newReviewawait)
+        const newReview = await createReview(newReviewTitle, newReviewDescription, ratingValue, id); 
+        console.log(newReview)
+        location.reload()
     }
 
     const handleChangeTitle = async(e) => {
@@ -24,21 +26,26 @@ const NewReview = ({id}) => {
 
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="newReview">
+            <h2>
+                Add a Review
+            </h2>
+            <form onSubmit={handleSubmit} className='reviewForm'>
                 <div>
                     <label>
-                    Title:
+                    Title
                     <input type="text" value={newReviewTitle} onChange={handleChangeTitle} />
                     </label>
                 </div>
                 <div>
                     <label>
-                    Description:
+                    Description
                     <input type="text" value={newReviewDescription} onChange={handleChangeDescription} />
                     </label>
                 </div>
-                <div>
+                <div className="rating">
+                    <label>
+                    Rating
                     <select id="rating" name="rating">
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -46,8 +53,9 @@ const NewReview = ({id}) => {
                         <option value="4">4</option>
                         <option value="5">5</option>
                     </select>
+                    </label>
                 </div>
-                <input type="submit" value="Submit" />
+                <input className="submit" type="submit" value="Submit" />
             </form>
         </div>
     )
