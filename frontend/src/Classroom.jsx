@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom"
+import NewReview from './newReview';
 import { getReviewList } from "./service"
 
 const Classroom = () => {
@@ -12,6 +13,7 @@ const Classroom = () => {
 
     return (
         <div>
+            <NewReview id={id}/>
             <h1>Classroom { id }</h1>
             {reviewList.map((review) => {
                 console.log(review)
