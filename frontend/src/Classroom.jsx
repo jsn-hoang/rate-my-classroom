@@ -13,7 +13,7 @@ const Classroom = () => {
     }, [])
 
     return (
-        <div style={{fontFamily: 'Courier New'}}>
+        <div className='classroom' style={{fontFamily: 'Courier New'}}>
             <h1 style={{margin:'20px'}}>{ id }</h1>
             <NewReview id={id}/>
             {reviewList.map((review) => {
