@@ -1,5 +1,6 @@
-# ratemyclassroom
+# rate-my-classroom
 
-This project was created for CMPUT 401 hackathon, Fall 2022. In this web app, a user can search for classrooms, and view and add a rating for a classroom.
+This project was created for the CMPUT 401 hackathon, Fall 2022, with the theme of "FINALLY BACK ON CAMPUS!" In this web app, a user can search for classrooms, and view and add a rating for a classroom.
 
-Mid-Fidelity Prototype: https://www.figma.com/file/nqEAn4kygEouFSm0CmPhPs/RateMyClassroom?node-id=0%3A1
+<img src="rmc1.JPG">
+<img src="rmc2.JPG">
